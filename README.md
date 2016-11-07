@@ -40,3 +40,9 @@ Below are different formates of time:
          
          ddd MMM d h:mm TT  - Mon Nov 7 at 4:04 PM
          
+
+Check it out at https://plnkr.co/edit/Xz5aFo8s34r6XjL08mIU?p=preview.
+
+###License
+
+angular_time.js is available under the MIT license.
