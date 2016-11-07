@@ -1,10 +1,7 @@
 (function() {
   'use strict';
 
-  /**
-   * Usage pattern
-   * <ds-widget-clock data-gmt-offset="0"></ds-widget-clock> 
-   */
+  
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
