@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  angular.module('rsclock', [])
-    .directive('rsClock', ['$interval', '$filter',
+  angular.module('rstime', [])
+    .directive('rsTime', ['$interval', '$filter',
       function($interval, $filter) {
         return clock($interval, $filter);
       }
@@ -12,23 +12,25 @@
     return {
       restrict: 'EA',
       scope: {
-        unix: '=isUnix',
+        live: '=isLive',
         digitalFormat: '=digitalFormat',
         value: '=startTime',
         diff: '=diff'
       },
-      template: '<div class="widget-clock"><div class="digital"><span class="time"><span class="hours">{{digital}}</span></span></div></div>',
+      template: '<div class="digital"><span>{{digital}}</span></div>',
       link: function(scope, element, attrs){
           var config = {};
           config.formate = scope.digitalFormat || 'hh:mm a';
-          config.unix = scope.unix || false;
           config.value = scope.value;
           config.diff= scope.diff || false;
           scope.digital = logicC(config);
-    
+          if(scope.live){
             $interval(function(){
                scope.digital = logicC(config);
             },1000);
+          }else{
+            scope.digital = logicC(config);
+          } 
         }
       }
   }
@@ -45,7 +47,7 @@
      if(config.diff){
        return daysBetween(new Date(config.value*1000), new Date());  
      }
-     else if(config.unix){
+     else if(config.value != undefined){
        return new Date(config.value*1000).format(config.formate);
      } else{
        return (new Date().format(config.formate));  
