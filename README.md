@@ -1,12 +1,12 @@
 # angular_time
 
-declare ds.clock as dependency as shown below.
+declare rsclock as dependency as shown below.
 
 ```javascript
-angular.module('myModule', ['ds.clock']);
+angular.module('myModule', ['rsclock']);
 ```
 
 ## Example Markup as 
 
 
-    <ds-widget-clock theme="dark" show-secs="true" digital-format="'hh:mm:ss a'"></ds-widget-clock>
+    <rs-clock show-secs="true" digital-format="'hh:mm:ss a'"></rs-clock>
