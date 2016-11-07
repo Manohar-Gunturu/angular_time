@@ -9,7 +9,7 @@
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   angular.module('rsclock', [])
-    .directive('dsWidgetClock', ['$interval', '$filter',
+    .directive('rsClock', ['$interval', '$filter',
       function($interval, $filter) {
         return clock($interval, $filter);
       }
